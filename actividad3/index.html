@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria DDyW</title>
+    <!-- Modo Claro por defecto -->
+    <link id="theme-link" rel="stylesheet" href="estilo-claro.css">
+    <script>
+        function cambiarTema(tema) {
+            document.getElementById('theme-link').setAttribute('href', tema);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Veterinaria DDyW</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#" onclick="cambiarTema('estilo-claro.css')">Modo Claro</a></li>
+                <li><a href="#" onclick="cambiarTema('estilo-oscuro.css')">Modo Oscuro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección de Inicio -->
+        <section id="inicio">
+            <div class="banner">
+                <h2>Atención veterinaria de calidad</h2>
+            </div>
+            <div class="contenido">
+                <h3>¡Registrate para recibir novedades y ofertas!</h3>
+                <form>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required><br><br>
+
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <label for="mascota">Nombre de la Mascota:</label>
+                    <input type="text" id="mascota" name="mascota" required><br><br>
+
+                    <label for="tipo-mascota">Tipo de Mascota:</label>
+                    <select id="tipo-mascota" name="tipo-mascota" required>
+                        <option value="perro">Perro</option>
+                        <option value="gato">Gato</option>
+                        <option value="otro">Otro</option>
+                    </select><br><br>
+
+                    <input type="submit" value="Registrarse">
+                </form>
+            </div>
+        </section>
+
+        <!-- Sección de Servicios -->
+        <section id="servicios">
+            <h2>Servicios</h2>
+            <img src="servicios.jpg" />
+            <ul>
+                <li><strong>Consultas generales y especializadas:</strong> Nuestros veterinarios están capacitados para ofrecer consultas de rutina, así como consultas especializadas para tratar problemas complejos.</li>
+                <li><strong>Vacunación y desparasitación:</strong> Protegemos a tu mascota contra enfermedades comunes a través de un programa de vacunación completo y desparasitaciones regulares.</li>
+                <li><strong>Cirugías:</strong> Realizamos cirugías menores y mayores en nuestras instalaciones, desde esterilizaciones hasta procedimientos más complejos.</li>
+                <li><strong>Atención de emergencias 24/7:</strong> Nuestro equipo está disponible las 24 horas del día, los 7 días de la semana para atender emergencias veterinarias de todo tipo.</li>
+                <li><strong>Peluquería y estética para mascotas:</strong> Ofrecemos servicios de corte de pelo, baño y tratamientos especiales para que tu mascota luzca siempre impecable.</li>
+            </ul>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Teléfono de emergencias (24 horas): +54 11 1234-5678</p>
+            <p>Email: contacto@veterinaria-ddyw.com</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Veterinaria DDyW. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
