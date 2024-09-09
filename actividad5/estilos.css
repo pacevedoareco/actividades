@@ -1,0 +1,180 @@
+/* Paleta de colores tana */
+:root {
+    --primary-color: #1e5945;
+    --secondary-color: #e4a010;
+    --text-color: #333;
+    --background-color: #f5f5f5;
+    --accent-color: #d64d4d;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1, h2 {
+    color: var(--primary-color);
+}
+
+#inicio{
+    line-height: 2;
+}
+.slogan {
+    font-style: italic;
+    color: var(--accent-color);
+}
+#inicio img{
+    width: 90%;
+    padding: 1rem;
+}
+#inicio .texto{
+    position: absolute;
+    width: 35%;
+}
+#inicio div.marco {
+    width: 50%; float: right;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background:
+     linear-gradient(
+       to left,
+       red 0, 
+       red 33.3%,
+       white 33.3%, 
+       white 66.6%, 
+       green 66.6%, 
+       green ) top no-repeat,
+     linear-gradient(
+       to right,
+       red 0, 
+       red 33.3%,
+       white 33.3%, 
+       white 66.6%, 
+       green 66.6%, 
+       green ) bottom no-repeat,
+     linear-gradient(
+       to top,
+       red 0, 
+       red 33.3%,
+       white 33.3%, 
+       white 66.6%, 
+       green 66.6%, 
+       green ) left no-repeat,
+     linear-gradient(
+       to bottom,
+       red 0, 
+       red 33.3%,
+       white 33.3%, 
+       white 66.6%, 
+       green 66.6%, 
+       green ) right no-repeat;
+    background-size:100% 3px, 100% 3px,  3px 100%,  3px 100% ;
+}
+
+#platos { clear: both; }
+#platos ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+#platos ul li {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#horarios, #contacto {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.galeria li{
+  margin: 5px;
+  border: 1px solid #ccc;
+  width: 180px;
+}
+
+.galeria li:hover {
+  border: 1px solid #777;
+}
+
+.galeria li img {
+  width: 100%;
+  height: auto;
+}
+
+.galeria div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+    #platos ul li{width: 90%;}
+    #inicio div.marco{width: 100%;float: none;}
+    #inicio .texto {
+        position: relative;
+        width: 100%;
+    }
+    #horarios, #contacto {
+        padding: 1rem;
+    }
+}
