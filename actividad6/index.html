@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de arte DyDWeb</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <h1>Galería de arte DyDWeb</h1>
+    <hr/>
+</header>
+<div id="modalFoto" class="modal">
+  <span id="cerrar">&times;</span>
+  <img id="imagenModal">
+  <div id="textoModal"></div>
+</div>
+<main>
+    <div class="container mt-4">
+        <div class="gallery">
+            <div class="gallery-item gallery-item-wide">
+                <img src="./img/torre.jpg" alt="Paris">
+                <div class="gallery-item-content">
+                    <span class="badge bg-primary">París</span>
+                    <h5>La ciudad del amor</h5>
+                    <p>Esta ciudad tiene un significado especial para mí. Muchas cosas sucedieron en esta ciudad y, por algún motivo, siempre termino volviendo.</p>
+                </div>
+            </div>
+            <div class="gallery-item gallery-item-wide">
+                <img src="./img/tennis.jpg" alt="Londres">
+                <div class="gallery-item-content">
+                    <span class="badge bg-primary">Londres</span>
+                    <h5>Una parada obligatoria</h5>
+                    <p>Londres es una ciudad maravillosa. Cualquier viaje por Europa debería incluir una parada en esta mágica ciudad.</p>
+                </div>
+            </div>
+            <div class="gallery-item gallery-item-tall">
+                <img src="./img/futbol.jpg" alt="Hobbies">
+                <div class="gallery-item-content">
+                    <span class="badge bg-primary">Hobbies</span>
+                    <h5>El deporte y su doble funcionalidad</h5>
+                    <p>Fútbol, tenis, las artes marciales y hasta el ajedrez. Cada deporte nos deja nuevas experiencias y enseñanzas. Es increíble lo mucho que se aprende en cada interacción.</p>
+                </div>
+            </div>
+            <div class="gallery-item gallery-item-wide">
+                <img src="./img/bebe.jpg" alt="Bebitos">
+                <div class="gallery-item-content">
+                    <span class="badge bg-primary">Babies!</span>
+                    <h5>Acá debería incluir una foto de mi hija <3</h5>
+                    <p>Sin dudas, la paternidad cambió completamente mi visión del mundo.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img/ropa.jpg" alt="Cultura">
+                <div class="gallery-item-content">
+                    <span class="badge bg-primary">Cultura</span>
+                    <h5>La cultura danesa y su falta de colores</h5>
+                    <p>Los daneses son famosos por su gusto por la moda, aunque fue una sorpresa descubrir que visten siempre colores claros y es raro encontrar variedad de colores, como sucede en latinoamérica.</p>
+                </div>
+            </div>
+            <div class="gallery-item gallery-item-very-wide">
+                <img src="./img/avion.jpg" alt="Hobbies">
+                <div class="gallery-item-content">
+                    <span class="badge bg-primary">Hobbies</span>
+                    <h5>Viajando se fortalece el corazón</h5>
+                    <p>Sin lugar a dudas las mejores experiencias las viví viajando. Hoy tengo la fortuna de poder viajar de la mano de mi esposa, con mi hija saltando en mis hombros.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img/queso.jpg" alt="Hobbies">
+                <div class="gallery-item-content">
+                    <span class="badge bg-primary">Hobbies</span>
+                    <h5>La gastronomía es otro hilo que me lleva a Francia</h5>
+                    <p>París y sus alrededores tienen, además de su magia, una rica historia en gastronomía.<br />
+                    Si tengo que elegir un ingrediente salado, el queso es mi preferido.<br />En cualquiera de sus formas, combinado con prácticamente cualquier cosa.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+   &copy; 2024 - Algunos derechos reservados. Las imágenes son royalty free y pueden reutilizarse.
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    var modal = document.getElementById("modalFoto");
+    var cerrar = document.getElementById("cerrar");
+    var imagenModal = document.getElementById("imagenModal");
+    var textoModal = document.getElementById("textoModal");
+    cerrar.onclick = function() {
+      modal.style.display = "none";
+    }
+    modal.onclick = function() {
+      modal.style.display = "none";
+    }
+    document.querySelector(".gallery").querySelectorAll("div").forEach(
+    el => el.addEventListener(
+      "click",
+      event => {
+        var img = el.querySelector("img");
+        modal.style.display = "block";
+        imagenModal.src = img.src;
+        textoModal.innerHTML = el.querySelector("div").innerHTML;
+      }
+    )
+  );
+</script>
+</body>
+</html>
