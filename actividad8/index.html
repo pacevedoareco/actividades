@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio con JavaScript</title>
+    <script type="text/javascript">
+	// Mis datos:
+	let miNombre = "Pablo";
+	let miCiudad = "Helsinge";
+	let miUniversidad = "UADE";
+
+	// Datos del usuario:
+	let tuNombre = prompt("Ingresa tu nombre: ");
+	let tuCiudad = prompt("Ingresa tu ciudad: ");
+	let tuNacimientoTexto = prompt("Ingresa tu fecha de nacimiento (dd/mm/aaaa): ");
+	let errores = 0;
+
+	function formatearFecha(tuNacimientoTexto){
+		if(tuNacimientoTexto==null){ errores++; return "error";}
+		if(tuNacimientoTexto.length==10 || tuNacimientoTexto.length==8){
+			let tuNacimientoSplit = tuNacimientoTexto.split(tuNacimientoTexto.charAt(2));
+			tuNacimientoTexto = tuNacimientoSplit[1]+"/"+tuNacimientoSplit[0]+"/";
+			if(tuNacimientoSplit[2].length == 2){
+				let anioActual = new Date().getFullYear().toString().substr(2,2);
+				if(parseInt(tuNacimientoSplit[2])> anioActual && parseInt(tuNacimientoSplit[2]) < 99){
+					tuNacimientoTexto += "19"+tuNacimientoSplit[2];
+				}else if(parseInt(tuNacimientoSplit[2])<= anioActual){
+					tuNacimientoTexto += "20"+tuNacimientoSplit[2];
+				}else{
+					 errores++; return "error";
+				}
+			}else{
+				tuNacimientoTexto += tuNacimientoSplit[2];
+			}
+			console.log("antes del return");
+			console.log(tuNacimientoTexto);
+			return tuNacimientoTexto;
+		}
+		 errores++; return "error";
+	}
+	
+	let hoy = new Date();
+	let tuNacimiento = new Date(formatearFecha(tuNacimientoTexto));
+	while(isNaN(tuNacimiento)){
+		if(errores>3){
+			alert("Si no seguís las reglas, no jugamos.");
+			tuNacimiento = hoy;
+			break;
+		}
+		tuNacimientoTexto = prompt("La fecha es incorrecta, ingresa nuevamente tu fecha de nacimiento usando el formato dd/mm/aaaa (por ejemplo: 25/12/1990): ");
+		tuNacimiento = new Date(formatearFecha(tuNacimientoTexto));	
+	}
+	
+	let tusDias = Math.round((hoy.getTime()-tuNacimiento.getTime())/(1000*3600*24));
+
+
+	alert("Hola! Soy "+miNombre+". Vivo en "+miCiudad+" y estudio en "+miUniversidad+".");
+
+	alert(tusDias > 0? "Hola "+tuNombre+" de "+tuCiudad+"! Desde tu nacimiento viviste "+tusDias+" días! Disfruta el resto!" : tuNombre+" no quiere jugar.");
+	</script>
+</head>
+<body>
+	<h1>Ejercicio con JavaScript</h1>
+	<hr />
+	<ol>
+		<li>Cree tres variables con datos personales al azar y cuando cargue la página web, muestre un mensaje de bienvenida para el usuario.</li>
+		<li>Modifique el ejercicio anterior para que el usuario sea quien ingrese sus datos.</li>
+		<li>Modifique el ejercicio anterior para mostrar un mensaje (luego del mensaje del ejercicio 1), que le diga al usuario cuántos días ha vivido desde que nació.</li>
+	</ol>
+</body>
+</html>
