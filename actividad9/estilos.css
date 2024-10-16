@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: rgb(96,140,212);
+    background: linear-gradient(288deg, rgba(96,140,212,0.444437149859944) 0%, rgba(13,26,74,0.4584427521008403) 64%, rgba(39,114,190,0.2931766456582633) 100%);
+}
+main {
+    flex: 1 0 auto;
+    margin-bottom: 9rem !important;
+}
+nav{
+    border-radius: 0% 100% 78% 22% / 100% 0% 100% 0%;
+}
+.form-control-custom {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    width: 50vw;
+}
+@media only screen and (max-width: 992px) {
+    .form-control-custom{
+        width: 90vw;
+    }
+    footer{
+      min-height: 50px;
+    }
+    nav{
+        border-radius: 0;
+    }
+    main{ 
+        margin-bottom: 9rem !important;
+    }
+}
