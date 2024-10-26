@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Mirá la siguiente imagen!</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+<body>
+    <div class="container">
+        <h1>¡Mirá la siguiente imagen!</h1>
+        <div class="buttons">
+            <button class="btn btn-primary">Ocultar imagen</button>
+            <button class="btn btn-secondary">Mostrar imagen</button>
+        </div>
+        <img id="imagen" src="carpincho.jpg" />
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>    
+    <script>
+        $(document).ready(function() {
+            $('.btn-primary').click(()=>{
+                $('#imagen').hide();
+                document.title = "¡No tenemos ninguna imagen!";
+                $('h1').text('¡No tenemos ninguna imagen!');
+            });
+            $('.btn-secondary').click(()=>{
+                $('#imagen').show();
+                document.title = "¡Mirá la siguiente imagen!";
+                $('h1').text('¡Mirá la siguiente imagen!');
+            });
+
+            $('.container').hide().fadeIn(1500);
+            
+            $('.btn').hover(
+                function() {
+                    $(this).css('transform', 'translateY(-2px)');
+                },
+                function() {
+                    $(this).css('transform', 'translateY(0)');
+                }
+            );
+            $('.btn').click(function() {
+              $(this).addClass('clicked').delay(200).queue(function(next){
+                    $(this).removeClass('clicked');
+                    next();
+              });
+            });
+        });
+    </script>
+</body>
+</html>
