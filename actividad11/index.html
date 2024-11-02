@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con Modo Oscuro</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="bg-light transition">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary transition">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">Modo claro y oscuro</a>
+            <div class="navbar-nav ms-auto">
+                <button id="lightMode" class="btn btn-light my-4 mx-2">Modo Claro</button>
+                <button id="darkMode" class="btn btn-dark my-4 mx-2">Modo Oscuro</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1 id="titulo" class="text-center mb-4">Bienvenidos a mi página web (clara)</h1>
+        
+        <div class="text-center mb-4">
+            <img src="carpincho.jpg" alt="Carpincho" class="img-fluid rounded">
+        </div>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Encabezado 1</th>
+                    <th>Encabezado 2</th>
+                    <th>Encabezado 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dato 1</td>
+                    <td>Dato 2</td>
+                    <td>Dato 3</td>
+                </tr>
+                <tr>
+                    <td>Dato 4</td>
+                    <td>Dato 5</td>
+                    <td>Dato 6</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#darkMode").click(function() {
+                $("body").addClass("dark-mode");
+                $(".navbar").removeClass("bg-primary");
+                $(".table").addClass("table-dark");
+                $("#titulo").text("Bienvenidos a mi página web (oscura)");
+            });
+
+            $("#lightMode").click(function() {
+                $("body").removeClass("dark-mode");
+                $(".navbar").addClass("bg-primary");
+                $(".table").removeClass("table-dark");
+                $("#titulo").text("Bienvenidos a mi página web (clara)");
+            });
+        });
+    </script>
+</body>
+</html>

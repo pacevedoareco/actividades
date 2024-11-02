@@ -1,0 +1,17 @@
+.dark-mode {
+    background-color: #212529 !important;
+    color: #ffffff !important;
+}
+.dark-mode .table {
+    color: #ffffff !important;
+}
+.dark-mode .navbar {
+    background-color: #000000 !important;
+}
+.transition {
+    transition: all 0.3s ease;
+}
+img{
+    max-width: 100px;
+    width: 25vw;
+}
